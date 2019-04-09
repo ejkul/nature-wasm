@@ -22,7 +22,7 @@ impl GameObject {
     }
     pub fn render(&self) -> () {
         match self.tag {
-            GameObjectType::Circle => draw_circle(self.pos[0], self.pos[1])
+            GameObjectType::Circle => ()//draw_circle(self.pos[0], self.pos[1])
         }
     }
 }

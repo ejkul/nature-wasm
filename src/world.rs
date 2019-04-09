@@ -1,9 +1,10 @@
 extern crate cfg_if;
 extern crate wasm_bindgen;
+extern crate nalgebra as na;
 
 use cfg_if::cfg_if;
-use wasm_bindgen::prelude::*;
 use game_object::*;
+use wasm_bindgen::prelude::*;
 
 use renderers::*;
 
@@ -35,7 +36,6 @@ impl World {
             if object.pos[1] > self.height as f32 || object.pos[1] < 0.0{
                 object.vel[(1,0)] = object.vel[(1,0)] * (-1.0);
             }
-            //draw_circle(object.pos[0], object.pos[1]);
             object.render();
             update_position(&mut object);
         }
